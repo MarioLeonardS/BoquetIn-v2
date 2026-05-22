@@ -180,12 +180,15 @@ export default function App() {
       {/* HEADER NAV */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50">
         <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="text-xl font-serif tracking-widest uppercase font-semibold text-slate-950">
-            Boquetín
-          </div>
+          {/* Logo */}
+          <img
+            src="src\assets\boquetin.webp"
+            alt="Boquetín Logo"
+            className="w-32 object-contain"
+          />
           <div className="hidden md:flex space-x-12 text-xs uppercase tracking-widest font-medium text-slate-600">
-            <a href="#home" className="hover:text-sky-600 transition-colors">
-              Home
+            <a href="#" className="hover:text-sky-600 transition-colors">
+              Beranda
             </a>
             <button
               onClick={() =>
@@ -193,16 +196,16 @@ export default function App() {
               }
               className="hover:text-sky-400 transition-colors uppercase"
             >
-              Archive
+              Katalog
             </button>
-            <a href="#gallery" className="hover:text-sky-600 transition-colors">
-              Visuals
+            <a href="#galeri" className="hover:text-sky-600 transition-colors">
+              Galeri
             </a>
             <a
-              href="#location"
+              href="#hubungi-kami"
               className="hover:text-sky-600 transition-colors"
             >
-              Atelier
+              Hubungi Kami
             </a>
           </div>
           <button
@@ -219,16 +222,16 @@ export default function App() {
       {/* SECTION 1: HERO SECTION */}
       <section
         id="home"
-        className="pt-16 pb-24 px-6 max-w-4xl mx-auto text-center flex flex-col items-center"
+        className="mt-12 rounded-t-3xl pt-16  px-6 max-w-4xl mx-auto text-center flex flex-col items-center bg-[url('src/assets/blueflowerhero.webp')] bg-cover bg-center border border-slate-200 shadow-lg"
       >
-        <span className="text-xs font-semibold tracking-widest uppercase text-sky-600 mb-5">
+        <span className="text-xs font-semibold tracking-widest uppercase text-white mb-5">
           The Autumn Azure Collection
         </span>
-        <h2 className="text-4xl sm:text-6xl font-serif font-light tracking-tight text-slate-950 max-w-2xl leading-tight mb-8">
+        <h2 className="text-4xl sm:text-6xl font-serif font-light tracking-tight text-white max-w-2xl leading-tight mb-8">
           Architectural Bouquets Curation for{" "}
-          <span className="italic font-normal text-sky-950">Modern Spaces</span>
+          <span className="italic font-normal text-white">Modern Spaces</span>
         </h2>
-        <p className="text-base sm:text-lg text-slate-600 font-light max-w-xl leading-relaxed tracking-wide mb-10">
+        <p className="text-base sm:text-lg text-white font-light max-w-xl leading-relaxed tracking-wide mb-10">
           Moving away from the traditional, we craft asymmetrical floral
           installations featuring moody midnight indigos and structural ceramic
           styling.
@@ -238,18 +241,21 @@ export default function App() {
           onClick={() =>
             catalogRef.current?.scrollIntoView({ behavior: "smooth" })
           }
-          className="mb-16 px-10 py-4 bg-slate-950 text-white text-xs uppercase tracking-widest font-medium hover:bg-sky-900 transition-colors duration-300"
+          className="mb-16 px-10 py-4 bg-white rounded-lg text-blue-800 text-xs uppercase tracking-widest font-medium hover:bg-sky-900 transition-colors duration-300"
         >
           View The Archive
         </button>
 
         {/* Kurung kotak dihapus -> diganti menjadi aspect-video standar */}
-        <div className="w-full aspect-video bg-slate-100 relative group overflow-hidden border border-slate-200">
+        <div className="w-full aspect-video bg-slate-100 relative group overflow-hidden rounded-t-2xl">
           <img
-            src="https://images.unsplash.com/photo-1533608283944-12860df8374d?w=1200&fit=crop"
+            src="src\assets\blueboquet.webp"
             alt="Signature Deep Blue Couture Bouquet"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
+          <p className="absolute bottom-0 bg-blue-800 left-0 right-0 font-bold text-white text-center py-2">
+            Satin Boquet
+          </p>
         </div>
       </section>
 
