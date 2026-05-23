@@ -6,7 +6,6 @@ const PRODUCTS = [
     id: 1,
     title: "Midnight Indigo",
     description: "Deep sapphire roses layered with silver-tinted eucalyptus.",
-    price: 85.0,
     image:
       "https://images.unsplash.com/photo-1596436889106-be35e843f974?w=500&h=600&fit=crop",
     category: "Luxury",
@@ -15,7 +14,6 @@ const PRODUCTS = [
     id: 2,
     title: "Cerulean Whisper",
     description: "Ice-blue hydrangeas paired with delicate white ranunculus.",
-    price: 65.0,
     image:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500&h=600&fit=crop",
     category: "Minimalist",
@@ -25,7 +23,6 @@ const PRODUCTS = [
     title: "Porcelain Dusk",
     description:
       "Classic white peonies nestled in a deep navy structural wrap.",
-    price: 95.0,
     image:
       "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=500&h=600&fit=crop",
     category: "Wedding",
@@ -35,7 +32,6 @@ const PRODUCTS = [
     title: "Siren of the Sea",
     description:
       "Rare tinted blue orchids combined with structural monstera leaves.",
-    price: 140.0,
     image:
       "https://images.unsplash.com/photo-1585841860560-5e8c4f2f8f8f?w=500&h=600&fit=crop",
     category: "Luxury",
@@ -45,7 +41,6 @@ const PRODUCTS = [
     title: "Academic Azure",
     description:
       "Bright delphiniums mixed with golden-accented celebratory foliage.",
-    price: 55.0,
     image:
       "https://images.unsplash.com/photo-1563241527-3004b5a8ce73?w=500&h=600&fit=crop",
     category: "Graduation",
@@ -55,7 +50,6 @@ const PRODUCTS = [
     title: "Sapphire Promise",
     description:
       "Rich blue roses intertwined with white lilies and premium silk ribbons.",
-    price: 110.0,
     image:
       "https://images.unsplash.com/photo-1611254949007-12be4a091e33?w=500&h=600&fit=crop",
     category: "Anniversary",
@@ -65,7 +59,6 @@ const PRODUCTS = [
     title: "Pastel Ocean",
     description:
       "Playful mixed arrangement of soft blue carnations and blush sweet peas.",
-    price: 48.0,
     image:
       "https://images.unsplash.com/photo-1580707387996-65e44800cbf1?w=500&h=600&fit=crop",
     category: "Birthday",
@@ -74,7 +67,6 @@ const PRODUCTS = [
     id: 8,
     title: "Celestial Blossom",
     description: "A sculptural masterpiece featuring premium blue-toned flora.",
-    price: 165.0,
     image:
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop",
     category: "Luxury",
@@ -84,7 +76,6 @@ const PRODUCTS = [
     title: "Monochrome Minimalist",
     description:
       "Three structural blue-dyed tulips in an architectural ceramic vase.",
-    price: 40.0,
     image:
       "https://images.unsplash.com/photo-1549927539-ae2e8ea0c39f?w=500&h=600&fit=crop",
     category: "Minimalist",
@@ -94,7 +85,6 @@ const PRODUCTS = [
     title: "Velvet Night",
     description:
       "The ultimate midnight blue rose collection for dramatic elegance.",
-    price: 125.0,
     image:
       "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=500&h=600&fit=crop",
     category: "Anniversary",
@@ -103,12 +93,13 @@ const PRODUCTS = [
 
 const FILTER_CATEGORIES = [
   "All",
-  "Birthday",
-  "Wedding",
-  "Graduation",
-  "Anniversary",
-  "Minimalist",
-  "Luxury",
+  "Pipe Cleaner",
+  "Satin",
+  "Chocolatte",
+  "Money",
+  "Snack",
+  "Artificial",
+  "Custom",
 ];
 
 const GALLERY_IMAGES = [
@@ -145,7 +136,6 @@ export default function App() {
   const addToCart = (product) => setCartItems([...cartItems, product]);
   const removeFromCart = (index) =>
     setCartItems(cartItems.filter((_, i) => i !== index));
-  const totalPrice = cartItems.reduce((sum, item) => sum + item.price, 0);
 
   const WHATSAPP_NUMBER = "6281234567890";
 
@@ -168,7 +158,7 @@ export default function App() {
     const productList = cartItems
       .map((item, i) => `${i + 1}. ${item.title} - $${item.price.toFixed(2)}`)
       .join("\n");
-    const message = `Hello Boquetín, I would like to place an elegant order:\n\n${productList}\n\nTotal: $${totalPrice.toFixed(2)}\n\nPlease arrange the delivery. Thank you.`;
+    const message = `Hello Boquetín, I would like to place an elegant order:\n\n${productList}\n\nPlease arrange the delivery. Thank you.`;
     window.open(
       `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
       "_blank",
@@ -186,24 +176,24 @@ export default function App() {
             alt="Boquetín Logo"
             className="w-32 object-contain"
           />
-          <div className="hidden md:flex space-x-12 text-xs uppercase tracking-widest font-medium text-slate-600">
-            <a href="#" className="hover:text-sky-600 transition-colors">
+          <div className="hidden md:flex space-x-12 text-xs uppercase tracking-widest font-medium text-black">
+            <a href="#" className="hover:text-blue-700 transition-colors">
               Beranda
             </a>
             <button
               onClick={() =>
                 catalogRef.current?.scrollIntoView({ behavior: "smooth" })
               }
-              className="hover:text-sky-400 transition-colors uppercase"
+              className="hover:text-blue-700 transition-colors uppercase"
             >
               Katalog
             </button>
-            <a href="#galeri" className="hover:text-sky-600 transition-colors">
+            <a href="#galeri" className="hover:text-blue-700 transition-colors">
               Galeri
             </a>
             <a
               href="#hubungi-kami"
-              className="hover:text-sky-600 transition-colors"
+              className="hover:text-blue-700 transition-colors"
             >
               Hubungi Kami
             </a>
@@ -212,9 +202,9 @@ export default function App() {
             onClick={() =>
               orderListRef.current?.scrollIntoView({ behavior: "smooth" })
             }
-            className="text-xs uppercase tracking-widest font-semibold border-b border-slate-950 pb-1 hover:text-sky-600 hover:border-sky-600 transition-all"
+            className="text-xs uppercase tracking-widest font-semibold border-b border-slate-950 pb-1 hover:text-blue-700 transition-all"
           >
-            Bag ({cartItems.length})
+            Keranjang ({cartItems.length})
           </button>
         </nav>
       </header>
@@ -241,9 +231,9 @@ export default function App() {
           onClick={() =>
             catalogRef.current?.scrollIntoView({ behavior: "smooth" })
           }
-          className="mb-16 px-10 py-4 bg-white rounded-lg text-blue-800 text-xs uppercase tracking-widest font-medium hover:bg-sky-900 transition-colors duration-300"
+          className="mb-16 px-10 py-4 bg-white rounded-lg text-blue-800 text-xs uppercase tracking-widest font-medium hover:bg-blue-800 hover:text-white border hover:border-white border-blue-800 transition-colors duration-300"
         >
-          View The Archive
+          Lihat Katalog
         </button>
 
         {/* Kurung kotak dihapus -> diganti menjadi aspect-video standar */}
@@ -262,30 +252,30 @@ export default function App() {
       {/* SECTION 2: ARCHIVE CATALOG */}
       <section
         ref={catalogRef}
-        id="catalog"
+        id="katalog"
         className="py-24 border-t border-slate-200 bg-white"
       >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div>
-              <span className="text-xs font-semibold tracking-widest uppercase text-sky-600">
-                The Collection
+          <div className="flex flex-col mb-16 gap-6">
+            <div className="text-center">
+              <span className="text-xs font-semibold tracking-widest uppercase text-blue-600">
+                Katalog
               </span>
               <h3 className="text-3xl font-serif font-light text-slate-950 mt-2">
-                Browse Categories
+                Kategori Boquet
               </h3>
             </div>
 
             {/* Filter Buttons */}
-            <div className="flex flex-wrap gap-2 max-w-2xl">
+            <div className="flex flex-wrap justify-center gap-2">
               {FILTER_CATEGORIES.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-5 py-2 text-xs uppercase tracking-widest font-medium transition-all ${
                     selectedCategory === cat
-                      ? "bg-slate-950 text-white"
-                      : "bg-white text-slate-600 hover:text-slate-950 border border-slate-200"
+                      ? "bg-blue-800 rounded text-white"
+                      : "bg-white text-slate-600 hover:text-slate-950 outline outline-slate-300 rounded"
                   }`}
                 >
                   {cat}
@@ -321,11 +311,7 @@ export default function App() {
                     </p>
                   </div>
                 </div>
-
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
-                  <span className="text-base font-serif text-slate-950 font-medium">
-                    ${product.price.toFixed(2)}
-                  </span>
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
                   <button
                     onClick={() => addToCart(product)}
                     className="text-[11px] uppercase tracking-wider font-semibold border-b border-slate-950 pb-0.5 hover:text-sky-600 hover:border-sky-600 transition-all"
@@ -387,9 +373,6 @@ export default function App() {
                       <h4 className="font-serif text-base text-slate-950 font-normal">
                         {item.title}
                       </h4>
-                      <p className="text-xs text-slate-500 font-light mt-1">
-                        ${item.price.toFixed(2)}
-                      </p>
                     </div>
                     <button
                       onClick={() => removeFromCart(index)}
@@ -405,9 +388,6 @@ export default function App() {
                 <div className="flex justify-between items-baseline">
                   <span className="text-xs uppercase tracking-widest font-medium text-slate-500">
                     Estimated Total:
-                  </span>
-                  <span className="text-2xl font-serif font-light text-slate-950">
-                    ${totalPrice.toFixed(2)}
                   </span>
                 </div>
 
