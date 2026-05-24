@@ -8,7 +8,7 @@ const PRODUCTS = [
     description: "Deep sapphire roses layered with silver-tinted eucalyptus.",
     image:
       "https://images.unsplash.com/photo-1596436889106-be35e843f974?w=500&h=600&fit=crop",
-    category: "Luxury",
+    category: "Satin Boquet",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const PRODUCTS = [
     description: "Ice-blue hydrangeas paired with delicate white ranunculus.",
     image:
       "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500&h=600&fit=crop",
-    category: "Minimalist",
+    category: "Satin Boquet",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ const PRODUCTS = [
       "Classic white peonies nestled in a deep navy structural wrap.",
     image:
       "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=500&h=600&fit=crop",
-    category: "Wedding",
+    category: "Money Boquet",
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const PRODUCTS = [
       "Rare tinted blue orchids combined with structural monstera leaves.",
     image:
       "https://images.unsplash.com/photo-1585841860560-5e8c4f2f8f8f?w=500&h=600&fit=crop",
-    category: "Luxury",
+    category: "Money Boquet",
   },
   {
     id: 5,
@@ -43,7 +43,7 @@ const PRODUCTS = [
       "Bright delphiniums mixed with golden-accented celebratory foliage.",
     image:
       "https://images.unsplash.com/photo-1563241527-3004b5a8ce73?w=500&h=600&fit=crop",
-    category: "Graduation",
+    category: "Snack Boquet",
   },
   {
     id: 6,
@@ -52,7 +52,7 @@ const PRODUCTS = [
       "Rich blue roses intertwined with white lilies and premium silk ribbons.",
     image:
       "https://images.unsplash.com/photo-1611254949007-12be4a091e33?w=500&h=600&fit=crop",
-    category: "Anniversary",
+    category: "Snack Boquet",
   },
   {
     id: 7,
@@ -61,7 +61,7 @@ const PRODUCTS = [
       "Playful mixed arrangement of soft blue carnations and blush sweet peas.",
     image:
       "https://images.unsplash.com/photo-1580707387996-65e44800cbf1?w=500&h=600&fit=crop",
-    category: "Birthday",
+    category: "Artificial Boquet",
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ const PRODUCTS = [
     description: "A sculptural masterpiece featuring premium blue-toned flora.",
     image:
       "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=600&fit=crop",
-    category: "Luxury",
+    category: "Artificial Boquet",
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ const PRODUCTS = [
       "Three structural blue-dyed tulips in an architectural ceramic vase.",
     image:
       "https://images.unsplash.com/photo-1549927539-ae2e8ea0c39f?w=500&h=600&fit=crop",
-    category: "Minimalist",
+    category: "Custom Boquet",
   },
   {
     id: 10,
@@ -87,19 +87,17 @@ const PRODUCTS = [
       "The ultimate midnight blue rose collection for dramatic elegance.",
     image:
       "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=500&h=600&fit=crop",
-    category: "Anniversary",
+    category: "Custom Boquet",
   },
 ];
 
 const FILTER_CATEGORIES = [
   "All",
-  "Pipe Cleaner",
-  "Satin",
-  "Chocolatte",
-  "Money",
-  "Snack",
-  "Artificial",
-  "Custom",
+  "Satin Boquet",
+  "Money Boquet",
+  "Snack Boquet",
+  "Artificial Boquet",
+  "Custom Boquet",
 ];
 
 const GALLERY_IMAGES = [
@@ -208,7 +206,6 @@ export default function App() {
           </button>
         </nav>
       </header>
-
       {/* SECTION 1: HERO SECTION */}
       <section
         id="home"
@@ -248,7 +245,6 @@ export default function App() {
           </p>
         </div>
       </section>
-
       {/* SECTION 2: ARCHIVE CATALOG */}
       <section
         ref={catalogRef}
@@ -314,9 +310,9 @@ export default function App() {
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2">
                   <button
                     onClick={() => addToCart(product)}
-                    className="text-[11px] uppercase tracking-wider font-semibold border-b border-slate-950 pb-0.5 hover:text-sky-600 hover:border-sky-600 transition-all"
+                    className="text-[11px] uppercase tracking-wider font-semibold border-b border-slate-950 pb-0.5 hover:text-blue-700 hover:border-blue-700 transition-all"
                   >
-                    Request Order
+                    Pesan Boquet
                   </button>
                 </div>
               </div>
@@ -324,24 +320,22 @@ export default function App() {
           </div>
         </div>
       </section>
-
       {/* FLOATING STICKY ORDER BUTTON */}
       {cartItems.length > 0 && (
         <button
           onClick={() =>
             orderListRef.current?.scrollIntoView({ behavior: "smooth" })
           }
-          className="fixed bottom-8 right-8 z-50 bg-slate-950 text-white px-6 py-4 shadow-xl flex items-center gap-3 hover:bg-sky-900 transition-all group duration-300"
+          className="fixed bottom-8 right-8 z-50 bg-blue-700 text-white px-6 py-4 shadow-xl flex items-center gap-3 hover:bg-blue-900 transition-all group duration-300"
         >
           <span className="text-xs uppercase tracking-widest font-medium">
-            Open Manifest
+            Lihat Keranjang
           </span>
           <span className="w-5 h-5 bg-white text-slate-950 text-[10px] font-bold rounded-full flex items-center justify-center">
             {cartItems.length}
           </span>
         </button>
       )}
-
       {/* SECTION 4: INVOICE / ORDER MANIFEST */}
       <section
         ref={orderListRef}
@@ -350,7 +344,7 @@ export default function App() {
         <div className="max-w-2xl mx-auto px-6">
           <div className="text-center mb-12">
             <h3 className="text-3xl font-serif font-light text-slate-950">
-              Your Selections
+              Keranjang Boquet
             </h3>
             <div className="w-12 h-px bg-slate-400 mx-auto mt-4"></div>
           </div>
@@ -358,7 +352,10 @@ export default function App() {
           {cartItems.length === 0 ? (
             <div className="bg-white border border-slate-200 p-12 text-center">
               <p className="text-sm text-slate-500 font-light uppercase tracking-widest">
-                Your curation folder is empty
+                Kamu Belum Memilih Boquet
+              </p>
+              <p className="text-sm text-slate-500 font-light uppercase tracking-widest">
+                Jelajahi Katalog untuk Menambahkan Pilihanmu!
               </p>
             </div>
           ) : (
@@ -385,40 +382,33 @@ export default function App() {
               </div>
 
               <div className="bg-white border border-slate-200 p-6 space-y-4">
-                <div className="flex justify-between items-baseline">
-                  <span className="text-xs uppercase tracking-widest font-medium text-slate-500">
-                    Estimated Total:
-                  </span>
-                </div>
-
                 <button
                   onClick={handleWhatsAppOrder}
-                  className="w-full py-4 bg-slate-950 text-white text-xs uppercase tracking-widest font-semibold hover:bg-sky-900 transition-colors duration-300"
+                  className="w-full py-4 bg-blue-700 text-white text-xs uppercase tracking-widest font-semibold hover:bg-blue-900 transition-colors duration-300"
                 >
-                  Forward Manifest via WhatsApp
+                  Pesan via WhatsApp
                 </button>
 
                 <button
                   onClick={() => setCartItems([])}
                   className="w-full text-center text-[11px] uppercase tracking-widest text-slate-400 hover:text-slate-600 transition-colors"
                 >
-                  Clear All Selections
+                  Hapus Semua Pilihan
                 </button>
               </div>
             </div>
           )}
         </div>
       </section>
-
       {/* SECTION 5: LOOKBOOK CAROUSEL */}
       <section id="gallery" className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold tracking-widest uppercase text-sky-600">
-              Editorial Gallery
+              Galeri
             </span>
             <h3 className="text-3xl font-serif font-light text-slate-950 mt-2">
-              Atelier Atmosphere
+              Kreasi Boquet.in
             </h3>
           </div>
 
@@ -451,7 +441,6 @@ export default function App() {
           </div>
         </div>
       </section>
-
       {/* SECTION 6: PHYSICAL STUDIO MAPS */}
       <section
         id="location"
@@ -460,10 +449,10 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <span className="text-xs font-semibold tracking-widest uppercase text-sky-600">
-              Visit The Studio
+              Kunjungi Kami
             </span>
             <h3 className="text-4xl font-serif font-light text-slate-950">
-              Boquetín Atelier
+              Boquet.in
             </h3>
             <p className="text-sm text-slate-600 font-light leading-relaxed tracking-wide">
               Our flagship laboratory is located within the historical art house
@@ -496,25 +485,30 @@ export default function App() {
           </div>
         </div>
       </section>
-
-      {/* SECTION 7: EDITORIAL FOOTER */}
-      <footer className="bg-slate-950 text-slate-400 border-t border-slate-900">
+      {/* SECTION 7: EDITORIAL FOOTER */}a
+      <footer className="bg-blue-950 text-slate-400 border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-xs tracking-widest uppercase font-light">
           <div className="space-y-4">
-            <h4 className="text-base font-serif tracking-widest font-normal text-white lowercase first-letter:uppercase">
-              Boquetín.
-            </h4>
-            <p className="leading-relaxed lowercase first-letter:uppercase text-slate-500 tracking-normal font-sans">
-              Avant-garde floral compositions engineered for lasting visual
-              impression. Est. 2020.
+            <img
+              src="src\assets\boquetin.webp"
+              alt="Boquetín Logo"
+              className="w-32 object-contain"
+            />
+            <p className="leading-relaxed lowercase first-letter:uppercase text-slate-500 tracking-normal pl-2 font-sans">
+              Jasa Buket Indonesia Sejak 2024. Kami menyediakan berbagai jenis
+              buket untuk berbagai acara, mulai dari ulang tahun, pernikahan,
+              hingga acara perusahaan.
             </p>
           </div>
           <div className="space-y-3">
-            <h4 className="font-semibold text-white">Navigations</h4>
+            <h4 className="font-semibold text-white">Navigasi</h4>
             <ul className="space-y-2 font-medium">
               <li>
-                <a href="#home" className="hover:text-white transition-colors">
-                  Top
+                <a
+                  href="#beranda"
+                  className="hover:text-white transition-colors"
+                >
+                  Beranda
                 </a>
               </li>
               <li>
@@ -524,64 +518,73 @@ export default function App() {
                   }
                   className="hover:text-white transition-colors uppercase"
                 >
-                  Archive
+                  Katalog
                 </button>
               </li>
               <li>
                 <a
-                  href="#gallery"
+                  href="#galeri"
                   className="hover:text-white transition-colors"
                 >
-                  Visuals
+                  Galeri
                 </a>
               </li>
               <li>
                 <a
-                  href="#location"
+                  href="#lokasi"
                   className="hover:text-white transition-colors"
                 >
-                  Atelier
+                  Lokasi
                 </a>
               </li>
             </ul>
           </div>
           <div className="space-y-3">
-            <h4 className="font-semibold text-white">Legal Intel</h4>
+            <h4 className="font-semibold text-white">Hubungi Kami</h4>
             <ul className="space-y-2 font-medium">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Privacy Policy
+                <a
+                  href="https://api.whatsapp.com/send/?phone=628996215888&text=Halo+Saya+Ingin+Pesan+Buket+Anda&type=phone_number&app_absent=0"
+                  className="hover:text-white transition-colors"
+                >
+                  Whatsapp
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Terms of Curation
+                <a
+                  href="tel:+628996215888"
+                  className="hover:text-white transition-colors"
+                >
+                  +628996215888
                 </a>
               </li>
             </ul>
           </div>
           <div className="space-y-3">
-            <h4 className="font-semibold text-white">Channels</h4>
+            <h4 className="font-semibold text-white">Sosial Media</h4>
             <ul className="space-y-2 font-medium">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a
+                  href="https://www.instagram.com/boquet.in"
+                  className="hover:text-white transition-colors"
+                >
                   Instagram
                 </a>
               </li>
               <li>
                 <a
-                  href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                  href="https://www.tiktok.com/@boquet.in?is_from_webapp=1&sender_device=pc"
                   className="hover:text-white transition-colors"
                 >
-                  WhatsApp Direct
+                  TikTok
                 </a>
               </li>
             </ul>
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 py-6 border-t border-slate-900 text-[10px] tracking-widest text-slate-600 flex flex-col sm:flex-row justify-between gap-4 uppercase font-medium">
-          <p>© 2026 Boquetín. Structural Flora Bureau.</p>
-          <p>Handcrafted in Alignment with the Golden Ratio 💜</p>
+          <p>© 2026 Boquet.ín. Jasa Buket Indonesia</p>
+          <p>Membuat Buket yang Indah untuk Setiap Kesempatan</p>
         </div>
       </footer>
     </div>
