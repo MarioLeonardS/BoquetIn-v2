@@ -212,7 +212,7 @@ export default function App() {
         className="mt-12 rounded-t-3xl pt-16  px-6 max-w-4xl mx-auto text-center flex flex-col items-center bg-[url('src/assets/blueflowerhero.webp')] bg-cover bg-center border border-slate-200 shadow-lg"
       >
         <span className="text-xs font-semibold tracking-widest uppercase text-white mb-5">
-          The Autumn Azure Collection
+          1# Jasa Boquet Terbaik Di Pamulang - Bogor
         </span>
         <h2 className="text-4xl sm:text-6xl font-serif font-light tracking-tight text-white max-w-2xl leading-tight mb-8">
           Architectural Bouquets Curation for{" "}
