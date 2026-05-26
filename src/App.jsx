@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./index.css";
 
 const PRODUCTS = [
@@ -100,6 +100,14 @@ const FILTER_CATEGORIES = [
   "Custom Boquet",
 ];
 
+const HERO_HEADLINE = [
+  "Wisuda",
+  "Ulang Tahun",
+  "Pernikahan",
+  "Pasangan",
+  "Keluarga",
+];
+
 const GALLERY_IMAGES = [
   {
     id: 0,
@@ -163,6 +171,15 @@ export default function App() {
     );
   };
 
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % HERO_HEADLINE.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-sky-100">
       {/* HEADER NAV */}
@@ -215,13 +232,17 @@ export default function App() {
           1# Jasa Boquet Terbaik Di Pamulang - Bogor
         </span>
         <h2 className="text-4xl sm:text-6xl font-serif font-light tracking-tight text-white max-w-2xl leading-tight mb-8">
-          Architectural Bouquets Curation for{" "}
-          <span className="italic font-normal text-white">Modern Spaces</span>
+          Rangkaian Buket indah Untuk{" "}
+          <h2
+            key={index}
+            className="italic font-normal text-white transition-opacity duration-1000 animate-fade-in"
+          >
+            "{HERO_HEADLINE[index]}"
+          </h2>
         </h2>
         <p className="text-base sm:text-lg text-white font-light max-w-xl leading-relaxed tracking-wide mb-10">
-          Moving away from the traditional, we craft asymmetrical floral
-          installations featuring moody midnight indigos and structural ceramic
-          styling.
+          Dasar buket dibalut dengan kertas krep premium berwarna senada dan
+          rangkaian bunga buatan dengan gaya yang elegan dan terlihat mewah.
         </p>
 
         <button
@@ -486,7 +507,7 @@ export default function App() {
         </div>
       </section>
       {/* SECTION 7: EDITORIAL FOOTER */}a
-      <footer className="bg-blue-950 text-slate-400 border-t border-slate-900">
+      <footer className="bg-slate-900 text-slate-400 border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-xs tracking-widest uppercase font-light">
           <div className="space-y-4">
             <img
@@ -494,7 +515,7 @@ export default function App() {
               alt="Boquetín Logo"
               className="w-32 object-contain"
             />
-            <p className="leading-relaxed lowercase first-letter:uppercase text-slate-500 tracking-normal pl-2 font-sans">
+            <p className="leading-relaxed lowercase first-letter:uppercase text-slate-400 tracking-normal pl-2 font-sans">
               Jasa Buket Indonesia Sejak 2024. Kami menyediakan berbagai jenis
               buket untuk berbagai acara, mulai dari ulang tahun, pernikahan,
               hingga acara perusahaan.
@@ -582,7 +603,7 @@ export default function App() {
             </ul>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto px-6 py-6 border-t border-slate-900 text-[10px] tracking-widest text-slate-600 flex flex-col sm:flex-row justify-between gap-4 uppercase font-medium">
+        <div className="max-w-7xl mx-auto px-6 py-6 border-t border-slate-700 text-[10px] tracking-widest text-slate-400 flex flex-col sm:flex-row justify-between gap-4 uppercase font-medium">
           <p>© 2026 Boquet.ín. Jasa Buket Indonesia</p>
           <p>Membuat Buket yang Indah untuk Setiap Kesempatan</p>
         </div>
