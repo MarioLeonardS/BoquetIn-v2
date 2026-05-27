@@ -1,7 +1,13 @@
+// Import State
 import { useState, useRef, useEffect } from "react";
+// Import Images
 import heroShowcase from "/src/assets/blueboquet.webp";
+import heroBackground from "/public/blueflowerhero.webp";
+import logo from "/public/boquetin.webp";
+// Import Tailwind CSS
 import "./index.css";
 
+// Logic Website
 const PRODUCTS = [
   {
     id: 1,
@@ -180,17 +186,14 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
+  // Output Website
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-sky-100">
       {/* HEADER NAV */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50">
         <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo */}
-          <img
-            src="/public/boquetin.webp"
-            alt="Boquetín Logo"
-            className="w-32 object-contain"
-          />
+          <img src={logo} alt="Boquetín Logo" className="w-32 object-contain" />
           <div className="hidden md:flex space-x-12 text-xs uppercase tracking-widest font-medium text-black">
             <a href="#" className="hover:text-blue-700 transition-colors">
               Beranda
@@ -226,7 +229,8 @@ export default function App() {
       {/* SECTION 1: HERO SECTION */}
       <section
         id="home"
-        className="mt-12 rounded-t-3xl pt-16  px-6 max-w-4xl mx-auto text-center flex flex-col items-center bg-[url('src/assets/blueflowerhero.webp')] bg-cover bg-center border border-slate-200 shadow-lg"
+        className="mt-12 rounded-t-3xl pt-16  px-6 max-w-4xl mx-auto text-center flex flex-col items-center bg-cover bg-center border border-slate-200 shadow-lg"
+        style={{ backgroundImage: `url(${heroBackground})` }}
       >
         <span className="text-xs font-semibold tracking-widest uppercase text-white mb-5">
           1# Jasa Boquet Terbaik Di Pamulang - Bogor
@@ -506,7 +510,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-xs tracking-widest uppercase font-light">
           <div className="space-y-4">
             <img
-              src="src\assets\boquetin.webp"
+              src={logo}
               alt="Boquetín Logo"
               className="w-32 object-contain"
             />
