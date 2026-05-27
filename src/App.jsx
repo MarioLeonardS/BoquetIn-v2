@@ -1,13 +1,14 @@
 import { useState, useRef, useEffect } from "react";
+import heroShowcase from "/src/assets/blueboquet.webp";
 import "./index.css";
 
 const PRODUCTS = [
   {
     id: 1,
-    title: "Midnight Indigo",
-    description: "Deep sapphire roses layered with silver-tinted eucalyptus.",
-    image:
-      "https://images.unsplash.com/photo-1596436889106-be35e843f974?w=500&h=600&fit=crop",
+    title: "Blue Rose Boquet",
+    description:
+      "Buket Bunga Mawar Biru yang terbuat dari bahan satin yang memberikan kesan mewah.",
+    image: "/Katalog/blueroseboquet.webp",
     category: "Satin Boquet",
   },
   {
@@ -20,13 +21,13 @@ const PRODUCTS = [
   },
   {
     id: 3,
-    title: "Porcelain Dusk",
+    title: "10K Boquet",
     description:
-      "Classic white peonies nestled in a deep navy structural wrap.",
-    image:
-      "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=500&h=600&fit=crop",
+      "Buket Uang 10 ribu yang disusun rapi dan dihias dengan bunga buatan yang elegan.",
+    image: "/Katalog/10kboquet.webp",
     category: "Money Boquet",
   },
+
   {
     id: 4,
     title: "Siren of the Sea",
@@ -38,11 +39,10 @@ const PRODUCTS = [
   },
   {
     id: 5,
-    title: "Academic Azure",
+    title: "Pink Snack Boquet",
     description:
-      "Bright delphiniums mixed with golden-accented celebratory foliage.",
-    image:
-      "https://images.unsplash.com/photo-1563241527-3004b5a8ce73?w=500&h=600&fit=crop",
+      "Buket Snack berwarna pink yang terbuat dari kertas krep premium. Bisa request warna & snack!",
+    image: "/Katalog/pinksnackboquet.webp",
     category: "Snack Boquet",
   },
   {
@@ -187,7 +187,7 @@ export default function App() {
         <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo */}
           <img
-            src="src\assets\boquetin.webp"
+            src="/public/boquetin.webp"
             alt="Boquetín Logo"
             className="w-32 object-contain"
           />
@@ -257,8 +257,8 @@ export default function App() {
         {/* Kurung kotak dihapus -> diganti menjadi aspect-video standar */}
         <div className="w-full aspect-video bg-slate-100 relative group overflow-hidden rounded-t-2xl">
           <img
-            src="src\assets\blueboquet.webp"
-            alt="Signature Deep Blue Couture Bouquet"
+            src={heroShowcase}
+            alt="Satin Boquet"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
           />
           <p className="absolute bottom-0 bg-blue-800 left-0 right-0 font-bold text-white text-center py-2">
@@ -323,7 +323,7 @@ export default function App() {
                     <h4 className="font-serif text-base font-normal text-slate-950 group-hover:text-sky-900 transition-colors">
                       {product.title}
                     </h4>
-                    <p className="text-xs text-slate-500 font-light leading-relaxed line-clamp-2">
+                    <p className="text-xs text-slate-500 font-light leading-relaxed line-clamp-3 ">
                       {product.description}
                     </p>
                   </div>
@@ -475,15 +475,10 @@ export default function App() {
             <h3 className="text-4xl font-serif font-light text-slate-950">
               Boquet.in
             </h3>
-            <p className="text-sm text-slate-600 font-light leading-relaxed tracking-wide">
-              Our flagship laboratory is located within the historical art house
-              district. Stop by to view fresh imports or consult custom
-              installations.
-            </p>
             <div className="pt-4 space-y-3 text-xs uppercase tracking-widest font-medium text-slate-700">
               <p>
-                <span className="text-slate-400">Location:</span> 123 Flower
-                Street, Luxury Boulevard
+                <span className="text-slate-400">Location:</span> Kp. Sarimulya
+                No.60, Setu, Kec. Setu, Kota Tangerang Selatan, Banten
               </p>
               <p>
                 <span className="text-slate-400">Hours:</span> Mon - Sat / 09:00
@@ -495,7 +490,7 @@ export default function App() {
           {/* Kurung kotak dihapus -> diganti aspect-video standar */}
           <div className="aspect-video bg-slate-200 border border-slate-200 overflow-hidden shadow-sm">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354763695137!2d144.95373!3d-37.8162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0x5045675218ce6e0!2sFlower%20Store!5e0!3m2!1sen!2sus!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.83132292419702!2d106.6822811965052!3d-6.355046565404435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e5b1ff928331%3A0x44710ee5b4a209bf!2sJMVJ%2BXWR%2C%20Jl.%20Sari%20Mulya%2C%20RT.004%2FRW.001%2C%20Setu%2C%20Kec.%20Setu%2C%20Kota%20Tangerang%20Selatan%2C%20Banten%2015343!5e0!3m2!1sid!2sid!4v1779871671443!5m2!1sid!2sid"
               width="100%"
               height="100%"
               style={{ border: 0 }}
