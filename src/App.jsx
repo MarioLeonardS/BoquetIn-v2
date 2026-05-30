@@ -244,7 +244,7 @@ export default function App() {
             "{HERO_HEADLINE[index]}"
           </h2>
         </h2>
-        <p className="text-base font-normal sm:text-lg text-white max-w-xl leading-relaxed tracking-wide mb-10">
+        <p className="text-base font-normal bg-black/20 md:bg-transparent sm:text-lg text-white max-w-xl leading-relaxed tracking-wide mb-10 rounded p-2">
           Boquet.in menyediakan berbagai jenis buket untuk berbagai acara, mulai
           dari ulang tahun, pernikahan, graduation, hingga acara lainnya. Pesan
           sekarang untuk mendapatkan buket yang indah!
