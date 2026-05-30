@@ -244,9 +244,10 @@ export default function App() {
             "{HERO_HEADLINE[index]}"
           </h2>
         </h2>
-        <p className="text-base sm:text-lg text-white font-light max-w-xl leading-relaxed tracking-wide mb-10">
-          Dasar buket dibalut dengan kertas krep premium berwarna senada dan
-          rangkaian bunga buatan dengan gaya yang elegan dan terlihat mewah.
+        <p className="text-base font-normal sm:text-lg text-white max-w-xl leading-relaxed tracking-wide mb-10">
+          Boquet.in menyediakan berbagai jenis buket untuk berbagai acara, mulai
+          dari ulang tahun, pernikahan, graduation, hingga acara lainnya. Pesan
+          sekarang untuk mendapatkan buket yang indah!
         </p>
 
         <button
