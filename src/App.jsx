@@ -365,7 +365,7 @@ export default function App() {
       {/* SECTION 4: INVOICE / ORDER MANIFEST */}
       <section
         ref={orderListRef}
-        className="py-24 bg-slate-100 border-t border-b border-slate-200"
+        className="py-24 bg-blue-100 border-t border-b border-slate-200"
       >
         <div className="max-w-2xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -470,7 +470,7 @@ export default function App() {
       {/* SECTION 6: PHYSICAL STUDIO MAPS */}
       <section
         id="location"
-        className="py-24 bg-slate-50 border-t border-slate-200"
+        className="py-24 bg-blue-100 border-t border-slate-200"
       >
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
@@ -506,7 +506,7 @@ export default function App() {
           </div>
         </div>
       </section>
-      {/* SECTION 7: EDITORIAL FOOTER */}a
+      {/* SECTION 7: EDITORIAL FOOTER */}
       <footer className="bg-slate-900 text-slate-400 border-t border-slate-900">
         <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-xs tracking-widest uppercase font-light">
           <div className="space-y-4">
